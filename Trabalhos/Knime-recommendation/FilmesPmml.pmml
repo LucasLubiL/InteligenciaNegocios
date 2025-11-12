@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="Usuario">
+    <Application name="KNIME" version="5.7.0"/>
+  </Header>
+  <DataDictionary numberOfFields="8">
+    <DataField name="Score" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="Duracao" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="Classificacao" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="Comedia" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="Terror" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="Animacao" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="Crime" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="Acao" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+  </DataDictionary>
+  <ClusteringModel modelName="k-means" functionName="clustering" modelClass="centerBased" numberOfClusters="5">
+    <MiningSchema>
+      <MiningField name="Score" invalidValueTreatment="asIs"/>
+      <MiningField name="Duracao" invalidValueTreatment="asIs"/>
+      <MiningField name="Classificacao" invalidValueTreatment="asIs"/>
+      <MiningField name="Comedia" invalidValueTreatment="asIs"/>
+      <MiningField name="Terror" invalidValueTreatment="asIs"/>
+      <MiningField name="Animacao" invalidValueTreatment="asIs"/>
+      <MiningField name="Crime" invalidValueTreatment="asIs"/>
+      <MiningField name="Acao" invalidValueTreatment="asIs"/>
+    </MiningSchema>
+    <ComparisonMeasure kind="distance">
+      <squaredEuclidean/>
+    </ComparisonMeasure>
+    <ClusteringField field="Score" compareFunction="absDiff"/>
+    <ClusteringField field="Duracao" compareFunction="absDiff"/>
+    <ClusteringField field="Classificacao" compareFunction="absDiff"/>
+    <ClusteringField field="Comedia" compareFunction="absDiff"/>
+    <ClusteringField field="Terror" compareFunction="absDiff"/>
+    <ClusteringField field="Animacao" compareFunction="absDiff"/>
+    <ClusteringField field="Crime" compareFunction="absDiff"/>
+    <ClusteringField field="Acao" compareFunction="absDiff"/>
+    <Cluster name="cluster_0" size="322">
+      <Array n="8" type="real">0.5423410025369608 0.24133585381222464 0.8398895790200117 0.0 1.0 0.0 0.0 0.0 </Array>
+    </Cluster>
+    <Cluster name="cluster_1" size="338">
+      <Array n="8" type="real">0.6858071505958834 0.21162421747706028 0.4158448389217619 0.0 0.0 1.0 0.0 0.0 </Array>
+    </Cluster>
+    <Cluster name="cluster_2" size="2243">
+      <Array n="8" type="real">0.6047107432827029 0.2789225093204615 0.7360182295536931 1.0 0.0 0.0 0.0 0.0 </Array>
+    </Cluster>
+    <Cluster name="cluster_3" size="1383">
+      <Array n="8" type="real">0.6137199189351571 0.35359489452670545 0.7600224953804146 0.0 0.0 0.0 0.0 1.0 </Array>
+    </Cluster>
+    <Cluster name="cluster_4" size="451">
+      <Array n="8" type="real">0.6777427313325631 0.3563899868247698 0.8381374722838184 0.0 0.0 0.0 1.0 0.0 </Array>
+    </Cluster>
+  </ClusteringModel>
+</PMML>
